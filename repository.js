@@ -1,13 +1,14 @@
 const MongoClient = require('mongodb').MongoClient;
-const url = 'mongodb://localhost:27017';
+// const url = 'mongodb://localhost:27017';
 // const url = 'mongodb://mongo:27017/dockerize-me';
+const url = 'mongodb://mongo:27017';
 let db = null;
 // connect to mongo
 MongoClient.connect(url, { useUnifiedTopology: true }, function (err, client) {
     console.log("Connected successfully to db server");
 
-    // connect to myproject database
-    db = client.db('myproject');
+    // connect to jbankingdb database
+    db = client.db('jbankingdb');
 });
 
 // create user account using the collection.insertOne function
