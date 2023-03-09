@@ -1,0 +1,66 @@
+  a:hover {
+    background-color: gold;
+  }
+  .active, .btn:hover {
+    background-color: #4fcc77;
+    color: white;
+  }
+  .accounts {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .accounts td, .accounts th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  .logout {
+    text-align: right;
+  }
+  .login {
+    text-align: left;
+  }
+  .success{
+    color:white;
+  }
+  .accounts tr:nth-child(even){background-color: #f2f2f2;}
+  
+  .accounts tr:hover {background-color: #ddd;}
+  
+  .accounts th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #04AA6D;
+    color: rgb(19, 11, 11);
+  }
+  a:visited{
+    background-color: rgb(59, 206, 191);
+  }
+
+
+  
+    .links {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: inherit;
+      margin-top: 3rem;
+    }
+      .link:link,
+      .link:visited {
+        outline: none;
+        color: #000;
+        margin: 1rem;
+        padding: 0.5rem 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        border-bottom: 2px solid transparent;
+        transition: all 0.3s;
+      }
+  
+      .link:hover,
+      .link:active {
+        border-bottom: 2px solid #fff;
+      }
+   
