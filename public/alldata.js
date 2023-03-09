@@ -5,40 +5,31 @@ function AllData(props) {
   const [transdata, setTransdata] = React.useState(null);
   let currlist = [];
   React.useEffect(() => {
-    console.log("inside React.useEffect");
     // fetch all accounts from API
     fetch("/account/all")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        setTransdata(JSON.stringify(data));
+        setTransdata(data);
       });
   }, []);
   var allUsers = JSON.parse(transdata);
   var res = [];
   for (var i in obj) {
-    console.log("obj[i]*****" + JSON.stringify(obj[i]));
     res.push(allUsers[i]);
   }
-  console.log("res-->" + res);
-  console.log("user-->" + JSON.stringify(props.user));
 
   if (props.user != null) {
     var obj = JSON.parse(transdata);
     let loggedinUser = {};
     var res = [];
     for (var i in obj) {
-      console.log("obj[i]*****" + JSON.stringify(obj[i]));
-      console.log("props.user.email*" + props.user.email);
-      console.log("obj[i].email*" + obj[i].email);
       if (props.user.email == obj[i].email) {
         loggedinUser = obj[i];
       }
 
       res.push(obj[i]);
     }
-    console.log("obj[i]: " + JSON.stringify(props.user));
-    console.log("loggedinUser: " + JSON.stringify(loggedinUser));
     currlist = (
       <tr key={props.user._id}>
         <td>{props.user.name}</td>
@@ -47,7 +38,7 @@ function AllData(props) {
       </tr>
     );
 
-    if (loggedinUser.email == "admin@mit.edu") {
+    if (loggedinUser.email == "jesca@mit.edu") {
       currlist = allUsers.map((item, index) => {
         return (
           <tr key={item._id}>
