@@ -42,7 +42,7 @@ function CreateAccount() {
       const auth = firebase.auth();
       const promise = auth.createUserWithEmailAndPassword(email, password);
       promise.then(() => {
-        const url = `/account/create/${name}/${email}/${password}`;
+        const url = `/account/create`;
         (async () => {
           var res = await fetch(url, {
             method: 'POST',
