@@ -47,9 +47,9 @@ function NavBar(props) {
                 <OverlayTrigger
                   placement={"bottom"}
                   key="Create"
-                  overlay={<Tooltip>Create a new account</Tooltip>}
+                  overlay={<Tooltip>Create a new customer account</Tooltip>}
                 >
-                  <Nav.Link href="#/CreateAccount/">Create Account</Nav.Link>
+                  <Nav.Link href="#/CreateAccount/">Create Customer Accounts</Nav.Link>
                 </OverlayTrigger>
               ) : null}
               {!isAdmin() && !isEmptyObject(props.user) ? (
