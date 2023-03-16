@@ -1,16 +1,14 @@
 const { OverlayTrigger, Tooltip, Navbar, Container, Nav } = ReactBootstrap;
 
-function NavBar(props) {
+const NavBar = (props) => {
   const navigate = ReactRouterDOM.useHistory();
   const logOut = () => {
     props.setUser({});
     navigate.push(`/`);
   };
 
-  function isAdmin() {
-    return props.user.email == "jesca@mit.edu";
-  }
-  props.user;
+  const isAdmin = props.user &&  props.user.email == "jesca@mit.edu"
+
   return (
     <>
       <Navbar bg="light" expand="lg">
@@ -39,7 +37,7 @@ function NavBar(props) {
                   <Nav.Link href="#/login/">Login</Nav.Link>
                 </OverlayTrigger>
               ) : null}
-              {isAdmin() ? (
+              {isAdmin ? (
                 <OverlayTrigger
                   placement={"bottom"}
                   key="Create"
@@ -48,7 +46,7 @@ function NavBar(props) {
                   <Nav.Link href="#/CreateAccount/">Create Customer Accounts</Nav.Link>
                 </OverlayTrigger>
               ) : null}
-              {!isAdmin() && props.user ? (
+              {!isAdmin && props.user ? (
                 <OverlayTrigger
                   placement={"bottom"}
                   key="deposit"
@@ -57,7 +55,7 @@ function NavBar(props) {
                   <Nav.Link href="#/deposit/">Deposit</Nav.Link>
                 </OverlayTrigger>
               ) : null}
-              {!isAdmin() && props.user ? (
+              {!isAdmin && props.user ? (
                 <OverlayTrigger
                   placement={"bottom"}
                   key="Withdraw"
