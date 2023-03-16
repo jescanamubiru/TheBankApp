@@ -2,7 +2,9 @@ var express = require("express");
 var app = express();
 var cors = require("cors");
 var repository = require("./repository.js");
-const e = require("express");
+
+const bodyParser = require('body-parser');
+app.use(bodyParser);
 
 // used to serve static files from public directory
 app.use(express.static("public"));
