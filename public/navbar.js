@@ -3,7 +3,7 @@ const { OverlayTrigger, Tooltip, Navbar, Container, Nav } = ReactBootstrap;
 const NavBar = (props) => {
   const navigate = ReactRouterDOM.useHistory();
   const logOut = () => {
-    props.setUser({});
+    props.setUser(null);
     navigate.push(`/`);
   };
 
