@@ -15,8 +15,8 @@ function Home() {
       <Card.Img variant="top" src="resources/bank2.png" />
       <Card.Body>
         <div class="d-flex">
-          <Button variant="primary" className="mr-auto">Login</Button>
-          <Button variant="success">Create Account</Button>
+          {/* <Button variant="primary" className="mr-auto">Login</Button>
+          <Button variant="success">Create Account</Button> */}
         </div>
       </Card.Body>
     </Card>

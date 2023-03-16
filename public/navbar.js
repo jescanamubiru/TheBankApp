@@ -7,10 +7,6 @@ function NavBar(props) {
     navigate.push(`/`);
   };
 
-  function isEmptyObject(obj) {
-    return JSON.stringify(obj) === "{}";
-  }
-
   function isAdmin() {
     return props.user.email == "jesca@mit.edu";
   }
@@ -34,7 +30,7 @@ function NavBar(props) {
               >
                 <Nav.Link href="#/">Home</Nav.Link>
               </OverlayTrigger>
-              {isEmptyObject(props.user) ? (
+              {!props.user ? (
                 <OverlayTrigger
                   placement={"bottom"}
                   key="Login"
@@ -52,7 +48,7 @@ function NavBar(props) {
                   <Nav.Link href="#/CreateAccount/">Create Customer Accounts</Nav.Link>
                 </OverlayTrigger>
               ) : null}
-              {!isAdmin() && !isEmptyObject(props.user) ? (
+              {!isAdmin() && props.user ? (
                 <OverlayTrigger
                   placement={"bottom"}
                   key="deposit"
@@ -61,7 +57,7 @@ function NavBar(props) {
                   <Nav.Link href="#/deposit/">Deposit</Nav.Link>
                 </OverlayTrigger>
               ) : null}
-              {!isAdmin() && !isEmptyObject(props.user) ? (
+              {!isAdmin() && props.user ? (
                 <OverlayTrigger
                   placement={"bottom"}
                   key="Withdraw"
@@ -70,7 +66,7 @@ function NavBar(props) {
                   <Nav.Link href="#/withdraw/">Withdraw</Nav.Link>
                 </OverlayTrigger>
               ) : null}
-              {!isEmptyObject(props.user) ? (
+              {props.user ? (
                 <OverlayTrigger
                   placement={"bottom"}
                   key="alldata"
@@ -82,7 +78,7 @@ function NavBar(props) {
             </Nav>
           </Navbar.Collapse>
         </Container>
-        {!isEmptyObject(props.user) ? (
+        {props.user ? (
           <Nav>
             <button
               type="submit"

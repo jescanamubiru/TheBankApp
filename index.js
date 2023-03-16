@@ -8,7 +8,6 @@ const e = require("express");
 app.use(express.static("public"));
 app.use(cors());
 
-// create user account
 app.get("/account/create/:name/:email/:password", function (req, res) {
   // check if account exists
   repository.findOne(req.params.email).then((users) => {

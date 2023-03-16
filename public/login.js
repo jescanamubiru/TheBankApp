@@ -142,18 +142,18 @@ function Login(props) {
         <div>
           <button
             type="submit"
-            className="btn btn-light"
+            className="btn btn-light float-right"
             onClick={handleEmailSignIn}
           >
             Login
           </button>
-          <button
+          {/* <button
             type="submit"
             className="btn btn-light float-right"
             onClick={handleGoogleSignIn}
           >
             Google Login
-          </button>
+          </button> */}
         </div>
       </>
     );

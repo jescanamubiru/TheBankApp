@@ -42,8 +42,6 @@ function checkAmount(amount) {
     return false;
   }
   if (amount < 0) {
-    // setStatus("Error: " + label);
-    // setTimeout(() => setStatus(""), 4000);
     alert("Error: Deposit amount can not be a negative value!"); //admin
     return false;
   }
@@ -75,14 +73,8 @@ function DepositForm(props){
   return(<>
 <br/>
     <h4 style={{ color: "white" }}>User: {props.user.email}</h4>
-      
-    {/* Email<br/>
-    <input type="input" 
-      className="form-control" 
-      placeholder="Enter email" 
-      value={email} onChange={e => setEmail(e.currentTarget.value)}/><br/> */}
-      
-    Amount<br/>
+    Amount
+    <br/>
     <input type="input" 
       className="form-control" 
       placeholder="Enter amount" 
