@@ -11,9 +11,9 @@ app.use(cors());
 // create user account
 app.get("/account/create/:name/:email/:password", function (req, res) {
   // check if account exists
-  repository.find(req.params.email).then((users) => {
+  repository.findOne(req.params.email).then((users) => {
     // if user exists, return error message
-    if (users.length > 0) {
+    if (users) {
       console.log("User already in exists");
       res.send("User already exists");
     } else {
