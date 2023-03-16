@@ -44,7 +44,14 @@ function CreateAccount() {
       promise.then(() => {
         const url = `/account/create/${name}/${email}/${password}`;
         (async () => {
-          var res = await fetch(url);
+          var res = await fetch(url, {
+            method: 'POST',
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({name, email, password})
+          });
           var data = await res.json();
           console.log(data);
         })();

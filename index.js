@@ -8,17 +8,17 @@ const e = require("express");
 app.use(express.static("public"));
 app.use(cors());
 
-app.get("/account/create/:name/:email/:password", function (req, res) {
+app.post("/account/create", function (req, res) {
   // check if account exists
-  repository.findOne(req.params.email).then((users) => {
+  repository.findOne(req.body.email).then((user) => {
     // if user exists, return error message
-    if (users) {
+    if (user) {
       console.log("User already in exists");
       res.send("User already exists");
     } else {
       // else create user
       repository
-        .create(req.params.name, req.params.email, req.params.password)
+        .create(req.body.name, req.body.email, req.body.password)
         .then((user) => {
           console.log("User created!");
           console.log(user);
