@@ -37,7 +37,7 @@ const NavBar = (props) => {
                   <Nav.Link href="#/login/">Login</Nav.Link>
                 </OverlayTrigger>
               ) : null}
-              {isAdmin ? (
+              
                 <OverlayTrigger
                   placement={"bottom"}
                   key="Create"
@@ -45,7 +45,7 @@ const NavBar = (props) => {
                 >
                   <Nav.Link href="#/CreateAccount/">Create Customer Accounts</Nav.Link>
                 </OverlayTrigger>
-              ) : null}
+              
               {!isAdmin && props.user ? (
                 <OverlayTrigger
                   placement={"bottom"}
